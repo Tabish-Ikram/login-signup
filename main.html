@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    var users = [];
+    function sign(){
+        users.push({
+            name:document.getElementById('signUp').name.value,
+            pass:document.getElementById('signUp').pass.value
+        });
+
+    }
+
+    function getAllUser(){
+        users.forEach(function(d,i){
+            console.log(d,i);
+        })
+    }
+
+    var userslog = [];
+    function log(){
+        var userName = document.getElementById('logIn').name.value;
+        var userPass = document.getElementById('logIn').pass.value;
+
+        users.forEach(function(d){
+            if(userName==d.name && userPass==d.pass)
+            {
+                alert("Welcome u r login");
+            }
+            else{
+                alert("user doesn't exist");
+            }
+        })
+    }
+
+</script>
+<body>
+<div>
+    <form id="signUp">
+        <h1>SignUp</h1>
+        <p>Name:</p>
+        <input type="text" name="name">
+        <p>Pass:</p>
+        <input type="password" name="pass">
+        <input type="button" value="submit" onclick="sign()">
+    </form>
+</div>
+<div>
+    <form id="logIn">
+        <h1>LogIn</h1>
+        <p>Name:</p>
+        <input type="test" name="name">
+        <p>Pass:</p>
+        <input type="password" name="pass">
+        <input type="button" value="logIn" onclick="log()">
+    </form>
+
+</div>
+
+</body>
+</html>
